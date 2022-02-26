@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy');
+
+$color: white;
+$bg: #6fce4a;
+
+body{
+	background: $bg;
+	height: 100vh;
+}
+.wrapper_button_anime{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
+.button_anime{
+	position: relative;
+	display: inline-block;
+	font-family: 'Luckiest Guy', cursive;
+	color: $color;
+	text-decoration: none;
+	font-size: 30px;
+	padding: 15px;
+	background: $bg;
+	transition: all 0.4s;
+	box-shadow: 0px 0px 10px 0px #56b431;
+	
+	$size : 10px;
+	&:after, &:before, span:after, span:before{
+		position: absolute;
+		background: $color;
+		content: "";
+		width: $size;
+		height: $size;
+		z-index: -1;
+		transition: all 0.4s;
+	}
+	
+	$offset: -2px;
+	&:after{
+		left: $offset;
+		top: $offset;
+	}	
+	&:before{
+		right: $offset;
+		top: $offset;
+	}	
+	span:after{
+		bottom: $offset;
+		left: $offset;
+	}
+	span:before{
+		bottom: $offset;
+		right: $offset;
+	}
+	
+	&:hover{
+		box-shadow: 0px 0px 0px 0px #56b431;
+		text-shadow: #56b431 0px 0px 3px;
+		&:after, &:before, span:after, span:before{
+			width: calc(50% + 2px);
+			height: calc(50% + 2px);
+			text-shadow: #56b431 0px 0px 3px;
+		}
+	}
+}
